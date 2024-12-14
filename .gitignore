@@ -396,3 +396,9 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Project-specific
+.DS_Store
+workshop/
+workshop*/
+Database.*

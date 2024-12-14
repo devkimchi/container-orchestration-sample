@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <OutputType>Exe</OutputType>
+    <IsAspireHost>true</IsAspireHost>
+
+    <AssemblyName>eShopLite.AppHost</AssemblyName>
+    <RootNamespace>eShopLite.AppHost</RootNamespace>
+
+    <UserSecretsId>a0449cc6-a4dd-4e30-9c83-3f4beef28990</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eShopLite.WebApp\eShopLite.WebApp.csproj" />
+    <ProjectReference Include="..\eShopLite.ProductApi\eShopLite.ProductApi.csproj" />
+    <ProjectReference Include="..\eShopLite.WeatherApi\eShopLite.WeatherApi.csproj" />
+  </ItemGroup>
+
+</Project>
