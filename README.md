@@ -342,3 +342,24 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
     ```bash
     docker compose down
     ```
+
+#### .NET Aspire
+
+1. Make sure you have been running Docker Desktop. If not, start Docker Desktop.
+
+1. Move to the `aspire` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/aspire
+    ```
+
+1. Run the following command to let .NET Aspire orchestrate all apps at once.
+
+    ```bash
+    dotnet watch run --project ./src/eShopLite.AppHost
+    ```
+
+1. Checkout the dashboard.
+1. Open the browser and navigate to `http://localhost:5000` to see the app running.
+
+
