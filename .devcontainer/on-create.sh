@@ -5,7 +5,7 @@ sudo apt-get update && \
     sudo rm -rf /var/lib/apt/lists/*
 
 echo Update .NET workloads
-dotnet workload update --from-previous-sdk
+dotnet workload update
 
 echo Install .NET dev certs
 dotnet dev-certs https --trust
