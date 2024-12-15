@@ -2,7 +2,7 @@
 ARG CONTAINER_IMAGE_TAG=17-ubuntu
 
 # Start with a base image containing Java runtime
-FROM mcr.microsoft.com/openjdk/jdk:${CONTAINER_IMAGE_TAG} as build
+FROM mcr.microsoft.com/openjdk/jdk:${CONTAINER_IMAGE_TAG} AS build
 
 # Set the working directory
 WORKDIR /app
@@ -29,7 +29,7 @@ RUN wget -P ${AGENT_PATH} https://github.com/open-telemetry/opentelemetry-java-i
 RUN chmod +x ${AGENT_PATH}/opentelemetry-javaagent.jar
 
 # Set the default server port
-ARG SERVER_PORT=8080
+ARG SERVER_PORT=5050
 ENV SERVER_PORT=${SERVER_PORT}
 
 # Make port available to the outside this container

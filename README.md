@@ -103,3 +103,69 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 
 ### Containerize microservice apps without `Dockerfile`
 
+#### `eShopLite.WeatherApi` in Java
+
+1. Make sure you have been running Docker Desktop. If not, start Docker Desktop.
+
+1. Make sure you have logged in Docker daemon to your preferred container registry. If not, run the following command:
+
+    ```bash
+    docker login
+    ```
+
+1. Move to the `msa` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/msa
+    ```
+
+1. Set the variables for building container image. Replace `{{YOUR_CONTAINER_REGISTRY}}` with your preferred container registry. For example, `my_container_registry.azurecr.io`. If you want to use Docker Hub, you can use your Docker Hub username.
+
+    ```bash
+    REGISTRY="{{YOUR_CONTAINER_REGISTRY}}"
+    IMAGE="eshoplite-weather"
+    TAG="latest"
+    ```
+
+    ```powershell
+    $REGISTRY = "{{YOUR_CONTAINER_REGISTRY}}"
+    $IMAGE = "eshoplite-weather"
+    $TAG = "latest"
+    ```
+
+1. Build the container image.
+
+    ```bash
+    ./src/eShopLite.WeatherApi/mvnw clean package -f ./src/eShopLite.WeatherApi/pom.xml -Dimage="${REGISTRY}/${IMAGE}:${TAG}"
+    ```
+
+1. Pull the container image from the container registry.
+
+    ```bash
+    docker pull ${REGISTRY}/${IMAGE}:${TAG}
+    ```
+
+1. Run a container from the container image.
+
+    ```bash
+    docker run -d -p 5050:5050 --name weather "${REGISTRY}/${IMAGE}:${TAG}"
+    ```
+
+1. Open the browser and navigate to `http://localhost:5050/api/weatherforecast` to see the app running.
+
+1. Stop and remove the container.
+
+    ```bash
+    docker stop weather
+    docker rm weather --force
+    ```
+
+1. Delete the container image.
+
+    ```bash
+    docker rmi "${REGISTRY}/${IMAGE}:${TAG}" --force
+    ```
+
+#### `eShopLite.ProductApi` in .NET
+
+#### `eShopLite.WebApp` in .NET
