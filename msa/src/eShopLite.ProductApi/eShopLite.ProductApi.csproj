@@ -7,10 +7,6 @@
 
     <AssemblyName>eShopLite.ProductApi</AssemblyName>
     <RootNamespace>eShopLite.ProductApi</RootNamespace>
-
-    <!-- <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled</ContainerBaseImage> -->
-    <ContainerRepository>eshoplite-product</ContainerRepository>
-    <ContainerImageTag>latest</ContainerImageTag>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,10 +16,5 @@
   <ItemGroup>
     <ProjectReference Include="..\eShopLite.ProductData\eShopLite.ProductData.csproj" />
   </ItemGroup>
-
-  <!-- <Target Name="InitDatabase" BeforeTargets="PrepareForBuild">
-    <Exec Condition=" '$(OS)' == 'Windows_NT' " Command="New-Item -Type File -Path $(ProjectDir)Database.db -Force"/>
-    <Exec Condition=" '$(OS)' != 'Windows_NT' " Command="touch $(ProjectDir)Database.db"/>
-  </Target> -->
 
 </Project>

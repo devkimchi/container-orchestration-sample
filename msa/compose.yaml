@@ -1,30 +1,21 @@
 name: eShopLite
 
 services:
-  productapi:
-    container_name: productapi
-    build:
-      context: .
-      dockerfile: ./Dockerfile.productapi
-      target: final
+  product:
+    container_name: product
+    image: eshoplite-product:latest
     ports:
-      - 3030:8080
-  weatherapi:
-    container_name: weatherapi
-    build:
-      context: .
-      dockerfile: ./Dockerfile.weatherapi
-      target: final
+      - 5051:8080
+  weather:
+    container_name: weather
+    image: eshoplite-weather:latest
     ports:
-      - 3031:8080
-  webapp:
-    container_name: webapp
-    build:
-      context: .
-      dockerfile: ./Dockerfile.webapp
-      target: final
+      - 5050:5050
+  webstore:
+    container_name: webstore
+    image: eshoplite-webstore:latest
     ports:
-      - 3000:8080
+      - 5000:8080
     depends_on:
-      - productapi
-      - weatherapi
+      - product
+      - weather

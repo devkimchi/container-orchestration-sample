@@ -7,16 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
                 .AddInteractiveServerComponents();
 
+var config = builder.Configuration;
+
 builder.Services.AddHttpClient<ProductApiClient>(client =>
 {
-    // client.BaseAddress = new("http://localhost:5051");
-    client.BaseAddress = new("http://productapi:8080");
+    client.BaseAddress = new(config["Services:Product:Http:0"]);
 });
 
 builder.Services.AddHttpClient<WeatherApiClient>(client =>
 {
-    // client.BaseAddress = new("http://localhost:5050");
-    client.BaseAddress = new("http://weatherapi:8080");
+    client.BaseAddress = new(config["Services:Weather:Http:0"]);
 });
 
 var app = builder.Build();

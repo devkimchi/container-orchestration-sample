@@ -9,7 +9,7 @@
     <RootNamespace>eShopLite.WebApp</RootNamespace>
 
     <!-- <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled</ContainerBaseImage> -->
-    <ContainerRepository>eshoplite-webapp</ContainerRepository>
+    <ContainerRepository>eshoplite-webstore</ContainerRepository>
     <ContainerImageTag>latest</ContainerImageTag>
   </PropertyGroup>
 
