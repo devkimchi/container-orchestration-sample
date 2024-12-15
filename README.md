@@ -362,4 +362,26 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 1. Checkout the dashboard.
 1. Open the browser and navigate to `http://localhost:5000` to see the app running.
 
+### Deployment to a Kubernetes Cluster
 
+#### .NET Aspire and Aspir8
+
+1. Make sure you have been running Docker Desktop and enabled Kubernetes. If not, start Docker Desktop and Kubernetes.
+
+1. Move to the `aspire` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/aspire
+    ```
+
+1. Follow the instructions in order:
+
+   1. [Setup local Kubernetes dashboard](https://github.com/devkimchi/aspir8-from-scratch?tab=readme-ov-file#kubernetes-dashboard-setup)
+   1. [Deploy the apps to the local Kubernetes cluster](https://github.com/devkimchi/aspir8-from-scratch?tab=readme-ov-file#aspire-flavoured-app-deployment-to-kubernetes-cluster-through-aspir8)
+
+## Resources
+
+- [Containerize .NET apps](https://aka.ms/dotnet/containerization)
+- [Containerize Java apps](https://github.com/GoogleContainerTools/jib)
+- [.NET Aspire](aka.ms/dotnet-aspire)
+- [Aspirate from Scratch](https://github.com/devkimchi/aspir8-from-scratch)
