@@ -136,7 +136,15 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 1. Build the container image.
 
     ```bash
-    ./src/eShopLite.WeatherApi/mvnw clean package -f ./src/eShopLite.WeatherApi/pom.xml -Dimage="${REGISTRY}/${IMAGE}:${TAG}"
+    ./src/eShopLite.WeatherApi/mvnw clean package \
+        -f ./src/eShopLite.WeatherApi/pom.xml \
+        -Dimage="${REGISTRY}/${IMAGE}:${TAG}"
+    ```
+
+    ```powershell
+    ./src/eShopLite.WeatherApi/mvnw clean package `
+        -f ./src/eShopLite.WeatherApi/pom.xml `
+        -Dimage="${REGISTRY}/${IMAGE}:${TAG}"
     ```
 
 1. Pull the container image from the container registry.
@@ -167,5 +175,68 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
     ```
 
 #### `eShopLite.ProductApi` in .NET
+
+1. Make sure you have been running Docker Desktop. If not, start Docker Desktop.
+
+1. Move to the `msa` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/msa
+    ```
+
+1. Run the following `dotnet publish` command to build the app.
+
+    ```bash
+    dotnet publish ./src/eShopLite.ProductApi \
+        -t:PublishContainer \
+        --os linux --arch x64
+    ```
+
+    ```powershell
+    dotnet publish ./src/eShopLite.ProductApi `
+        -t:PublishContainer `
+        --os linux --arch x64
+    ```
+
+1. If you want to change the base image to Ubuntu Chiseled image, use the following command.
+
+    ```bash
+    dotnet publish ./src/eShopLite.ProductApi \
+        -t:PublishContainer \
+        --os linux --arch x64 \
+        -p:ContainerBaseImage=mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled \
+        -p:ContainerRepository=eshoplite-product \
+        -p:ContainerImageTag=latest
+    ```
+
+    ```powershell
+    dotnet publish ./src/eShopLite.ProductApi `
+        -t:PublishContainer `
+        --os linux --arch x64 `
+        -p:ContainerBaseImage=mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled `
+        -p:ContainerRepository=eshoplite-product `
+        -p:ContainerImageTag=latest
+    ```
+
+1. Run a container from the container image.
+
+    ```bash
+    docker run -d -p 5051:8080 --name product eshoplite-product:latest
+    ```
+
+1. Open the browser and navigate to `http://localhost:5051/api/products` to see the app running.
+
+1. Stop and remove the container.
+
+    ```bash
+    docker stop weather
+    docker rm weather --force
+    ```
+
+1. Delete the container image.
+
+    ```bash
+    docker rmi "${REGISTRY}/${IMAGE}:${TAG}" --force
+    ```
 
 #### `eShopLite.WebApp` in .NET
