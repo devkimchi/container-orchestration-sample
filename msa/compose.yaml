@@ -1,0 +1,21 @@
+name: eShopLite
+
+services:
+  product:
+    container_name: product
+    image: eshoplite-product:latest
+    ports:
+      - 5051:8080
+  weather:
+    container_name: weather
+    image: eshoplite-weather:latest
+    ports:
+      - 5050:5050
+  webstore:
+    container_name: webstore
+    image: eshoplite-webstore:latest
+    ports:
+      - 5000:8080
+    depends_on:
+      - product
+      - weather

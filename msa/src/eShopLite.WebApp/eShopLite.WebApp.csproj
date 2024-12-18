@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <AssemblyName>eShopLite.WebApp</AssemblyName>
+    <RootNamespace>eShopLite.WebApp</RootNamespace>
+
+    <!-- <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-noble-chiseled</ContainerBaseImage> -->
+    <ContainerRepository>eshoplite-webstore</ContainerRepository>
+    <ContainerImageTag>latest</ContainerImageTag>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eShopLite.DataEntities\eShopLite.DataEntities.csproj" />
+  </ItemGroup>
+
+</Project>

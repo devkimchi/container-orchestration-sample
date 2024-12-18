@@ -1,0 +1,27 @@
+# syntax=docker/dockerfile:1
+
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
+
+COPY ./src/eShopLite.ProductApi /source/eShopLite.ProductApi
+COPY ./src/eShopLite.ProductData /source/eShopLite.ProductData
+COPY ./src/eShopLite.DataEntities /source/eShopLite.DataEntities
+
+WORKDIR /source/eShopLite.ProductApi
+
+ARG TARGETARCH=amd64
+
+RUN dotnet publish -a ${TARGETARCH/amd64/x64} -c Release -o /app
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS final
+
+WORKDIR /app
+
+COPY --from=build /app .
+
+RUN chown $APP_UID /app
+
+USER $APP_UID
+
+RUN touch /app/Database.db
+
+ENTRYPOINT ["dotnet", "eShopLite.ProductApi.dll"]

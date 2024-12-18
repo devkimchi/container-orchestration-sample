@@ -1,0 +1,64 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.0.0
+MinimumVisualStudioVersion = 17.8.0.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.WebApp", "src\eShopLite.WebApp\eShopLite.WebApp.csproj", "{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.ProductApi", "src\eShopLite.ProductApi\eShopLite.ProductApi.csproj", "{7018FD93-13D8-4546-AC0A-A94AD039DB03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.ProductData", "src\eShopLite.ProductData\eShopLite.ProductData.csproj", "{09624705-45AE-44C4-BE13-41A00F436172}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.DataEntities", "src\eShopLite.DataEntities\eShopLite.DataEntities.csproj", "{9D38682E-62BF-41C2-B5BC-269AB6BC261E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.AppHost", "src\eShopLite.AppHost\eShopLite.AppHost.csproj", "{D18B4381-457B-42C5-8073-42E2EA5E4481}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShopLite.ServiceDefaults", "src\eShopLite.ServiceDefaults\eShopLite.ServiceDefaults.csproj", "{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7018FD93-13D8-4546-AC0A-A94AD039DB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7018FD93-13D8-4546-AC0A-A94AD039DB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7018FD93-13D8-4546-AC0A-A94AD039DB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7018FD93-13D8-4546-AC0A-A94AD039DB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09624705-45AE-44C4-BE13-41A00F436172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09624705-45AE-44C4-BE13-41A00F436172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09624705-45AE-44C4-BE13-41A00F436172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09624705-45AE-44C4-BE13-41A00F436172}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D38682E-62BF-41C2-B5BC-269AB6BC261E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D38682E-62BF-41C2-B5BC-269AB6BC261E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D38682E-62BF-41C2-B5BC-269AB6BC261E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D38682E-62BF-41C2-B5BC-269AB6BC261E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18B4381-457B-42C5-8073-42E2EA5E4481}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18B4381-457B-42C5-8073-42E2EA5E4481}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18B4381-457B-42C5-8073-42E2EA5E4481}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18B4381-457B-42C5-8073-42E2EA5E4481}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E626625-1CFF-4D28-90DD-1731100101F8}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{67C53BAD-45F1-4D2A-8F32-8CA3BA1A40CD} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+		{7018FD93-13D8-4546-AC0A-A94AD039DB03} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+		{09624705-45AE-44C4-BE13-41A00F436172} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+		{9D38682E-62BF-41C2-B5BC-269AB6BC261E} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+		{D18B4381-457B-42C5-8073-42E2EA5E4481} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+		{0BCE8BDB-34C0-4BD1-9807-9F1343CEBA26} = {1B4637A1-20F5-41BB-BFC8-9E21FF5F62F5}
+	EndGlobalSection
+EndGlobal
