@@ -1,8 +1,9 @@
 # Set the default image tag
 ARG CONTAINER_IMAGE_TAG=17-ubuntu
+ARG PLATFORM=$BUILDPLATFORM
 
 # Start with a base image containing Java runtime
-FROM mcr.microsoft.com/openjdk/jdk:${CONTAINER_IMAGE_TAG} AS build
+FROM --platform=$PLATFORM mcr.microsoft.com/openjdk/jdk:${CONTAINER_IMAGE_TAG} AS build
 
 # Set the working directory
 WORKDIR /app

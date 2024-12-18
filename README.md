@@ -81,7 +81,11 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 1. Build the container image.
 
     ```bash
-    docker build . -t eshoplite-store:latest
+    # To follow the build platform
+    docker build -t eshoplite-store:latest .
+
+    # To specify the target platform
+    docker build --platform=linux/amd64 --build-arg TARGETARCH=amd64 -t eshoplite-store:latest .
     ```
 
 1. Run a container from the container image.
@@ -120,7 +124,7 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 1. Build the container image.
 
     ```bash
-    docker build . -f Dockerfile.product -t eshoplite-product:latest
+    docker build --platform linux/amd64 -f Dockerfile.product -t eshoplite-product:latest .
     ```
 
 1. Run a container from the container image.
@@ -269,7 +273,7 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
     docker run -d -p 5000:8080 --name webstore eshoplite-webstore:latest
     ```
 
-1. Open the browser and navigate to `http://localhost:5000` to see the app running.
+1. Open the browser and navigate to `http://localhost:5000` to see the app running. Make sure that both `/weather` and `/products` pages are not properly working, which is expected.
 
 1. Stop and remove the container.
 
@@ -302,7 +306,7 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
     docker run -d -p 5051:8080 --network eshoplite --network-alias product --name product eshoplite-product:latest
     ```
 
-1. Open the browser and navigate to `http://localhost:5000` to see the app running.
+1. Open the browser and navigate to `http://localhost:5000` to see the app running. Make sure this time both `/weather` and `/products` pages are properly showing contents.
 
 1. Delete containers and network
 

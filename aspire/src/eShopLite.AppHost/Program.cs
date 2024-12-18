@@ -18,6 +18,7 @@ var weatherapi = builder.AddSpringApp("weather",
                             })
                         .PublishAsDockerFile(
                             [
+                                new DockerBuildArg("PLATFORM", "linux/amd64"),
                                 new DockerBuildArg("JAR_NAME", "weatherapi-0.0.1-SNAPSHOT.jar"),
                                 new DockerBuildArg("AGENT_PATH", "/agents"),
                                 new DockerBuildArg("SERVER_PORT", "5050"),

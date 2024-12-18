@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0-alpine AS build
 
 COPY ./src/eShopLite.ProductApi /source/eShopLite.ProductApi
 COPY ./src/eShopLite.ProductData /source/eShopLite.ProductData
@@ -8,7 +8,9 @@ COPY ./src/eShopLite.DataEntities /source/eShopLite.DataEntities
 
 WORKDIR /source/eShopLite.ProductApi
 
-RUN dotnet publish -c Release -o /app
+ARG TARGETARCH=amd64
+
+RUN dotnet publish -a ${TARGETARCH/amd64/x64} -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0-alpine AS final
 
