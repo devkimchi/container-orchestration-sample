@@ -111,7 +111,7 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 
 #### `eShopLite.ProductApi` in .NET
 
-[`MSBuild`](https://github.com/dotnet/msbuild) has a feature to build your .NET app containerized without a `Dockerfile`. The downside of this approach is that you can't add the `RUN` instruction. This `eShopLite.ProductApi` app has to create a database file when the app starts, which requires the `RUN` instruction.
+Unlike the other microservice apps in this repository, this `eShopLite.ProductApi` app has to use `Dockerfile` for containerization because it requires the `RUN` instruction to create an SQLite database file inside the container.
 
 1. Make sure you have been running Docker Desktop. If not, start Docker Desktop.
 
@@ -124,7 +124,11 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
 1. Build the container image.
 
     ```bash
-    docker build --platform linux/amd64 -f Dockerfile.product -t eshoplite-product:latest .
+    # To follow the build platform
+    docker build -f Dockerfile.product -t eshoplite-product:latest .
+
+    # To specify the target platform
+    docker build --platform=linux/amd64 --build-arg TARGETARCH=amd64 -f Dockerfile.product -t eshoplite-product:latest .
     ```
 
 1. Run a container from the container image.
@@ -148,7 +152,7 @@ $REPOSITORY_ROOT = git rev-parse --show-toplevel
     docker rmi eshoplite-product:latest --force
     ```
 
-### Containerize microservice apps without `Dockerfile`
+### Containerize apps without `Dockerfile`
 
 #### `eShopLite.WeatherApi` in Java
 
