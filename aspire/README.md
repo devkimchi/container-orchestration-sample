@@ -1,7 +1,49 @@
-# STEP 04: .NET Aspire로 컨테이너 오케스트레이션하기
+# Container orchestration with .NET Aspire
 
-> 세이브 포인트는 워크샵의 각 단계별로 완성된 결과물을 볼 수 있는 포인트입니다. 따라서, 현재 단계의 결과물을 먼저 확인하고 싶을 때 또는 이전 단계로 돌아가고 싶을 때 이 세이브 포인트를 사용할 수 있습니다.
+[.NET Aspire](https://aka.ms/dotnet-aspire) provides an easy and simple way to orchestrate containers without using `docker network` or `docker compose`. It even provides a way to deploy all the apps to a Kubernetes cluster.
 
-이 단계에서는 [.NET Aspire](https://learn.microsoft.com/dotnet/aspire/get-started/aspire-overview)을 이용해 모든 앱을 오케스트레이션합니다.
+## Find the repository root
 
-관련 문서: [STEP 04: .NET Aspire로 컨테이너 오케스트레이션하기](../../docs/step-04.md)
+```bash
+# Bazh/Zshs
+REPOSITORY_ROOT=$(git rev-parse --show-toplevel)
+```
+
+```powershell
+# PowerShell
+$REPOSITORY_ROOT = git rev-parse --show-toplevel
+```
+
+## Container orchestration with .NET Aspire through `eShopLite.AppHost`
+
+1. Make sure you have been running Docker Desktop. If not, start Docker Desktop.
+
+1. Move to the `aspire` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/aspire
+    ```
+
+1. Run the following command to let .NET Aspire orchestrate all apps at once.
+
+    ```bash
+    dotnet watch run --project ./src/eShopLite.AppHost
+    ```
+
+1. Checkout the dashboard.
+1. Open the browser and navigate to `http://localhost:5000` to see the app running.
+
+## Deployment to a Kubernetes Cluster through .NET Aspire
+
+1. Make sure you have been running Docker Desktop and enabled Kubernetes. If not, start Docker Desktop and Kubernetes.
+
+1. Move to the `aspire` directory.
+
+    ```bash
+    cd $REPOSITORY_ROOT/aspire
+    ```
+
+1. Follow the instructions in order:
+
+   1. [Setup local Kubernetes dashboard](https://github.com/devkimchi/aspir8-from-scratch?tab=readme-ov-file#kubernetes-dashboard-setup)
+   1. [Deploy the apps to the local Kubernetes cluster](https://github.com/devkimchi/aspir8-from-scratch?tab=readme-ov-file#aspire-flavoured-app-deployment-to-kubernetes-cluster-through-aspir8)
