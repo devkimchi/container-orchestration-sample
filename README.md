@@ -6,19 +6,19 @@ This provides sample apps using .NET and Java, with various usage with Dockerfil
 
 ### .NET
 
-- [.NET SDK 9.0+](https://dotnet.microsoft.com/download/dotnet/9.0?WT.mc_id=dotnet-144884-juyoo)
+- [.NET SDK 9.0+](https://dotnet.microsoft.com/download/dotnet/9.0?WT.mc_id=dotnet-157350-juyoo)
 - [Aspirate](https://github.com/prom3theu5/aspirational-manifests)
 
 ### Java
 
-- [OpenJDK 17+](https://learn.microsoft.com/java/openjdk/download?WT.mc_id=dotnet-144884-juyoo)
+- [OpenJDK 17+](https://learn.microsoft.com/java/openjdk/download?WT.mc_id=dotnet-157350-juyoo)
 - [Apache Maven 3.9.6+](https://maven.apache.org/download.cgi)
 
 ### Tooling
 
-- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=dotnet-144884-juyoo)
-  - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit&WT.mc_id=dotnet-144884-juyoo) extension
-  - [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack&WT.mc_id=dotnet-144884-juyoo) extension
+- [Visual Studio Code](https://code.visualstudio.com/?WT.mc_id=dotnet-157350-juyoo)
+  - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit&WT.mc_id=dotnet-157350-juyoo) extension
+  - [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack&WT.mc_id=dotnet-157350-juyoo) extension
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
 
 ## Getting Started
