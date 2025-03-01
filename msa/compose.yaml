@@ -15,7 +15,7 @@ services:
     container_name: webstore
     image: eshoplite-webstore:latest
     ports:
-      - 5000:8080
+      - 5001:8080
     depends_on:
       - product
       - weather
